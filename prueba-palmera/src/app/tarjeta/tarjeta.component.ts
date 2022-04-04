@@ -14,10 +14,14 @@ export class TarjetaComponent implements OnInit {
   }
 
   anadirCarrito(){
-    console.log("asd");
     this.contador++;
 
     console.log(this.contador);
+
+  }
+
+  borrarCarrito(){
+    this.contador--;
 
   }
 }

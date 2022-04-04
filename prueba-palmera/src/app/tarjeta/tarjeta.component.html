@@ -5,12 +5,11 @@
   <p class="titulo">Palmera de cacao</p>
   <p class="peso">Pieza 425 g</p>
   <p><span class="negrita">1,75 €</span> <span class="precio">/ud.</span></p>
-  <button id="anadirCarritoBtn" class="anadirCarritoBtn" (click)="anadirCarrito()">Añadir al carrito</button>
+  <button *ngIf="contador<=0" id="anadirCarritoBtn" class="anadirCarritoBtn" (click)="anadirCarrito()">Añadir al carrito</button>
 
 
 
-  <ng-container
-   id="productoAdd" class="productoAdd" *ngIf="contador>0">
+  <ng-container id="productoAdd" class="productoAdd" *ngIf="contador>0">
       <hr>
       <div  class="productoAddContenedor">
           <div class="enCarro">
@@ -18,8 +17,8 @@
               <p><span id="unidad">{{contador}}</span> ud.</p>
           </div>
           <div class="botonesAdd">
-              <button onclick="remUnidad();">DEL</button>
-              <button onclick="addUnidad();">+</button>
+              <button (click)="borrarCarrito()">DEL</button>
+              <button (click)="anadirCarrito()">+</button>
           </div>
       </div>
   </ng-container>
